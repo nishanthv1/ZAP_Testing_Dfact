@@ -46,12 +46,9 @@ public class PetStoreMenuPage {
 		List<WebElement> left = this.getLeftNav();
 		boolean isOk = false;
 		for (int i = 0; i < left.size(); i++) {
-			System.out.printf("checkLeftNavLinks: Verfiy URL Status ", left.get(i).getAttribute("href"));
-			if (null != left.get(i).getAttribute("href")) {
-				int status = verifyURLStatus(left.get(i).getAttribute("href"));
-				if (status < 400) {
-					isOk = true;
-				}
+			int status = verifyURLStatus(left.get(i).getAttribute("href"));
+			if (status < 400) {
+				isOk = true;
 			}
 		}
 		return isOk;
@@ -81,14 +78,10 @@ public class PetStoreMenuPage {
 		List<WebElement> top = this.getTopNav();
 		boolean isOk = false;
 		for (int i = 0; i < top.size(); i++) {
-			System.out.printf("checkTopNavLinks: Verfiy URL Status ", top.get(i).getAttribute("href"));
-			if (null != top.get(i).getAttribute("href")) {
-				int status = verifyURLStatus(top.get(i).getAttribute("href"));
-				if (status < 400) {
-					isOk = true;
-				}
+			int status = verifyURLStatus(top.get(i).getAttribute("href"));
+			if (status < 400) {
+				isOk = true;
 			}
-
 		}
 		return isOk;
 	}
@@ -117,13 +110,10 @@ public class PetStoreMenuPage {
 		List<WebElement> img = this.getImgNav();
 		boolean isOk = false;
 		for (int i = 0; i < img.size(); i++) {
-			System.out.printf("checkImgNavLinks Verfiy URL Status ", img.get(i).getAttribute("href"));
-			if(null!=img.get(i).getAttribute("href")) {
-				int status = verifyURLStatus(img.get(i).getAttribute("href"));
-				if (status < 400) {
-					isOk = true;
-				}
-			}			
+			int status = verifyURLStatus(img.get(i).getAttribute("href"));
+			if (status < 400) {
+				isOk = true;
+			}
 		}
 		return isOk;
 	}

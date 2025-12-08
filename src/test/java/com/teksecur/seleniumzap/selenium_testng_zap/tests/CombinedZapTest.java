@@ -58,7 +58,7 @@ public class CombinedZapTest {
     private Properties locators;
     private WebDriverWait waiter;
     private static final String ZAP_ADDRESS = "127.0.0.1";
-    private static final int ZAP_PORT = 8080;
+    private static final int ZAP_PORT = 8081;
     private static final String ZAP_API_KEY = "9va1sfnq7oj9mh2scvn7b4doif";  // Set your ZAP API key if required
     private static final String TARGET = "https://petstore.octoperf.com";
     private static final String CONTEXT_NAME = "PetStoreContext";
@@ -473,13 +473,13 @@ public class CombinedZapTest {
         try {
             // Generate HTML report - returns byte[]
             byte[] htmlReportBytes = zapClient.core.htmlreport();
-            String reportPath = System.getProperty("user.dir") + File.separator + "PetStoreZAPReport.html";
+            String reportPath = REPORT_DIR + File.separator + REPORT_NAME;
             Files.write(Paths.get(reportPath), htmlReportBytes);
             System.out.println("✅ HTML report saved to: " + reportPath);
             
             // Generate XML report - returns byte[]
             byte[] xmlReportBytes = zapClient.core.xmlreport();
-            String xmlReportPath = System.getProperty("user.dir") + File.separator + "PetStoreZAPReport.xml";
+            String xmlReportPath = REPORT_DIR + File.separator + "PetStoreZAPReport.xml";
             Files.write(Paths.get(xmlReportPath), xmlReportBytes);
             System.out.println("✅ XML report saved to: " + xmlReportPath);
             
