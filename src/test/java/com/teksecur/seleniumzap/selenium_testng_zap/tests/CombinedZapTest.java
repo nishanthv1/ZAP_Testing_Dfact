@@ -62,7 +62,7 @@ public class CombinedZapTest {
     private static final String ZAP_API_KEY = "9va1sfnq7oj9mh2scvn7b4doif";  // Set your ZAP API key if required
     private static final String TARGET = "https://petstore.octoperf.com";
     private static final String CONTEXT_NAME = "PetStoreContext";
-    private static final String CONTEXT_REGEX = "https://petstore\\.octoperf\\.com.*";
+    private static final String CONTEXT_REGEX = "https://petstore.octoperf.com*";
     //private static final ClientApi zapClient = new ClientApi(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
     private ClientApi zapClient;
     private static final String REPORT_DIR = System.getProperty("REPORT_DIR");
@@ -554,4 +554,5 @@ public class CombinedZapTest {
 
     
     
+
 }
