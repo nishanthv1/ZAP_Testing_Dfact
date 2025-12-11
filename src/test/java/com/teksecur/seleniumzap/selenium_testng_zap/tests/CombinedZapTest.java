@@ -63,7 +63,9 @@ public class CombinedZapTest {
     private static final String TARGET = "https://petstore.octoperf.com";
     private static final String CONTEXT_NAME = "PetStoreContext";
     private static final String CONTEXT_REGEX = "https://petstore.octoperf.com*";
-	private static final String CONTEXT_REGEX1 = "https://update.googleapis.com*, https://content-autofill.googleapis.com*, https://optimizationguide-pa.googleapis.com*";
+	private static final String CONTEXT_REGEX1 = "https://update.googleapis.com*";
+	private static final String CONTEXT_REGEX2 = "https://content-autofill.googleapis.com*"; 
+	private static final String CONTEXT_REGEX3 ="https://optimizationguide-pa.googleapis.com*";
     //private static final ClientApi zapClient = new ClientApi(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
     private ClientApi zapClient;
     private static final String REPORT_DIR = System.getProperty("REPORT_DIR");
@@ -100,6 +102,8 @@ public class CombinedZapTest {
         zapClient.context.newContext(CONTEXT_NAME);
         zapClient.context.includeInContext(CONTEXT_NAME, CONTEXT_REGEX);
 		zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX1);
+		zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX2);
+		zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX3);
 
         // Enable standard ZAP policies
         enableZapPolicies(zapClient);
@@ -558,4 +562,5 @@ public class CombinedZapTest {
     
 
 }
+
 
