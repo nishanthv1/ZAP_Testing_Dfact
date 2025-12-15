@@ -101,9 +101,9 @@ public class CombinedZapTest {
         zapClient.core.newSession("PetStoreSession", "true");
         zapClient.context.newContext(CONTEXT_NAME);
         zapClient.context.includeInContext(CONTEXT_NAME, CONTEXT_REGEX);
-		//zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX1);
-		//zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX2);
-		//zapClient.context.exclueInContext(CONTEXT_NAME, CONTEXT_REGEX3);
+		zapClient.context.exclueFromContext(CONTEXT_NAME, CONTEXT_REGEX1);
+		zapClient.context.exclueFromContext(CONTEXT_NAME, CONTEXT_REGEX2);
+		zapClient.context.exclueFromContext(CONTEXT_NAME, CONTEXT_REGEX3);
 
         // Enable standard ZAP policies
         enableZapPolicies(zapClient);
@@ -562,6 +562,7 @@ public class CombinedZapTest {
     
 
 }
+
 
 
 
